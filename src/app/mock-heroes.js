@@ -1,3 +1,4 @@
+// replaced by in-memory-data.service.ts
 "use strict";
 exports.HEROES = [
     { id: 11, name: 'Mr. Nice' },
