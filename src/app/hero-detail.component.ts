@@ -15,10 +15,10 @@ export class HeroDetailComponent implements OnInit {
     @Input()
     hero: Hero;
 
-        constructor(
-    private heroService: HeroService,
-    private route: ActivatedRoute,
-    private location: Location
+    constructor(
+        private heroService: HeroService,
+        private route: ActivatedRoute,
+        private location: Location
     ) {}
 
     ngOnInit(): void {
@@ -33,14 +33,5 @@ export class HeroDetailComponent implements OnInit {
 
     save(): void {
         this.heroService.update(this.hero).then(() => this.goBack());
-    }
-    
-    delete(hero: Hero): void {
-        this.heroService
-            .delete(hero.id)
-            .then(() => {
-                this.heroes = this.heroes.filter(h => h !== hero);
-                if (this.selectedHero === hero) { this.selectedHero = null; }
-            });
     }
 }
